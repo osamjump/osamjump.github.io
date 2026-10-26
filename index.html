@@ -107,6 +107,15 @@
   .links a::after{content:" ›"}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border-radius:999px;background:var(--btn);color:var(--on-btn);font-size:16px;font-weight:600}
   .btn:hover{text-decoration:none;filter:brightness(1.08)}
+  /* audience doors under the hero headline */
+  .doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;max-width:760px;margin-top:10px}
+  @media (max-width:600px){ .doors{grid-template-columns:1fr} }
+  .door{background:var(--tile);border-radius:20px;padding:18px 20px;display:flex;flex-direction:column;gap:2px;text-align:left;color:var(--ink);border:1px solid transparent;transition:border-color .2s}
+  .door:hover{text-decoration:none;border-color:var(--btn)}
+  .door span{font-size:13px;color:var(--sub);font-weight:600}
+  .door b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .door b::after{content:" ›";color:var(--link)}
+  .door em{font-style:normal;font-size:13px;color:var(--sub)}
   .btn.kakao{background:#FEE500;color:#191919}
   .btn.kakao.big{min-height:52px;padding:0 30px;font-size:18px;margin-top:6px}
   .nav-links .pill.kakao{background:#FEE500;color:#191919}
@@ -184,8 +193,9 @@
   <div class="inner">
     <a class="brand" href="#top"><span class="logo-mark" style="width:50px" aria-hidden="true"></span><span class="sr">영샘</span></a>
     <div class="nav-links">
+      <a href="jumprope.html">방문수업</a>
+      <a href="#classes">기관 출강</a>
       <a href="#videos">영상</a>
-      <a href="#classes">수업</a>
       <a href="#coach">지도자 교육</a>
       <a class="pill kakao" href="https://open.kakao.com/o/sBEFyysi" target="_blank" rel="noopener">카톡 문의</a>
       <a class="pill" href="#contact">강의 문의</a>
@@ -200,7 +210,11 @@
       <div class="eyebrow">스포츠리듬트레이닝 전문 강사</div>
       <h1 class="headline">리듬으로 만드는<br>자신감.</h1>
       <p class="lede">리듬을 기준으로 목적에 맞는 효율적인 움직임을 설계합니다. 유아부터 시니어까지.</p>
-      <div class="links"><a href="#contact">강의 문의</a><a href="#videos">수업 영상</a></div>
+      <div class="doors" aria-label="찾으시는 수업">
+        <a class="door" href="jumprope.html"><span>학부모님</span><b>방문수업</b><em>유아 · 초등 줄넘기 레슨</em></a>
+        <a class="door" href="#classes"><span>학교 · 기관 담당자</span><b>출강 · 특강</b><em>정규 · 방과후 · 원데이</em></a>
+        <a class="door" href="#coach"><span>강사 · 지도자</span><b>지도자 교육</b><em>자격증 · 정기 과정</em></a>
+      </div>
       <div class="hero-photo"><img src="profile.webp" alt="스포츠리듬트레이닝 강사 영샘 정영성"></div>
     </div>
   </section>
@@ -235,7 +249,7 @@
           <div class="tag">개인 · 소그룹</div>
           <h3>가정 방문수업</h3>
           <p>서울 지역 가정 · 아파트 커뮤니티 시설. 리듬트레이닝 · 음악줄넘기</p>
-          <a href="jumprope.html">자세히 보기</a>
+          <a href="jumprope.html">방문수업 안내</a>
         </article>
         <article class="card">
           <div class="tag">구청 · 보건소</div>
