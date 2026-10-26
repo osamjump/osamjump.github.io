@@ -122,14 +122,18 @@
   .hero-photo{margin-top:32px;width:100%;max-width:440px;aspect-ratio:4/5;border-radius:28px 28px 0 0;overflow:hidden;background:var(--tile)}
   .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
 
-  /* class highlight video + scene photos */
-  .highlight{max-width:560px;margin:0 auto;aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:#000}
-  .highlight video{width:100%;height:100%;object-fit:cover;display:block}
-  .photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
-  @media (max-width:760px){ .photos{grid-template-columns:repeat(2,minmax(0,1fr))} }
-  .photos figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
-  .photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;display:block;background:var(--page)}
-  .photos figcaption{font-size:13px;color:var(--sub);text-align:center}
+  /* fast-moving reel of class videos */
+  .reel{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .reel-track{display:flex;gap:12px;width:max-content;animation:reel 16s linear infinite}
+  .reel:hover .reel-track{animation-play-state:paused}
+  @keyframes reel{to{transform:translateX(calc(-50% - 6px))}}
+  .shot{width:180px;aspect-ratio:9/14;border-radius:20px;overflow:hidden;flex-shrink:0;position:relative;display:flex;align-items:flex-end;padding:14px;background:#000}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+  .shot b{position:relative;font-size:14px;font-weight:700;color:#FFFFFF;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:5px 12px;border-radius:999px}
+  a.shot:hover{text-decoration:none}
+  a.shot:hover img{transform:scale(1.04)}
+  @media (max-width:560px){ .shot{width:140px} .reel-track{animation-duration:12s} }
+  @media (prefers-reduced-motion: reduce){ .reel{overflow-x:auto} .reel-track{animation:none} }
   .channels{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px}
 
   /* programs: four compact cards */
@@ -187,7 +191,7 @@
   <div class="inner">
     <a class="brand" href="#top"><span class="logo-mark" style="width:50px" aria-hidden="true"></span><span class="sr">영샘</span></a>
     <div class="nav-links">
-      <a href="#videos">수업 현장</a>
+      <a href="#videos">영상</a>
       <a href="#classes">수업</a>
       <a href="#reviews">후기</a>
       <a href="#coach">지도자 교육</a>
@@ -203,32 +207,20 @@
       <div class="eyebrow">스포츠리듬트레이닝 전문 강사</div>
       <h1 class="headline">리듬으로 만드는<br>자신감.</h1>
       <p class="lede">리듬을 기준으로 목적에 맞는 효율적인 움직임을 설계합니다. 유아부터 시니어까지.</p>
-      <div class="links"><a href="#contact">강의 문의</a><a href="#videos">수업 현장</a></div>
+      <div class="links"><a href="#contact">강의 문의</a><a href="#videos">수업 영상</a></div>
       <div class="hero-photo"><img src="profile.webp" alt="스포츠리듬트레이닝 강사 영샘 정영성"></div>
     </div>
   </section>
 
-  <section id="videos" class="block tint gutter">
-    <div class="inner">
-      <div class="head">
-        <div class="eyebrow">수업 현장</div>
-        <h2 class="h2">실제 수업 모습.</h2>
-        <p class="lede">야외 수업, 부모님과 함께하는 수업, 단체 수업.</p>
-      </div>
-      <div class="highlight">
-        <video src="highlight.mp4" poster="highlight.jpg" autoplay muted loop playsinline preload="metadata" aria-label="수업 하이라이트 영상"></video>
-      </div>
-      <div class="photos">
-        <figure><img src="photo_outdoor.jpg" alt="야외 리듬 줄넘기 수업" loading="lazy"><figcaption>야외 수업 · 리듬 + 줄넘기</figcaption></figure>
-        <figure><img src="photo_family.jpg" alt="부모님과 함께하는 수업" loading="lazy"><figcaption>부모님과 함께하는 수업</figcaption></figure>
-        <figure><img src="photo_group.jpg" alt="단체 리듬트레이닝 수업" loading="lazy"><figcaption>단체 수업</figcaption></figure>
-        <figure><img src="photo_kids.jpg" alt="단체 리듬트레이닝 수업" loading="lazy"><figcaption>단체 수업</figcaption></figure>
-      </div>
-      <p class="note">아이들 얼굴은 모자이크 처리했습니다.</p>
-      <div class="channels">
-        <a class="btn" href="https://www.youtube.com/channel/UC7je4oc4Y1chyBnM8KlbpJw" target="_blank" rel="noopener">유튜브</a>
-        <a class="btn" href="https://www.instagram.com/osam.jump" target="_blank" rel="noopener">인스타그램</a>
-      </div>
+  <section id="videos" class="block tint">
+    <div class="head gutter">
+      <div class="eyebrow">수업 영상</div>
+      <h2 class="h2">실제 수업 동작을 공개합니다.</h2>
+    </div>
+    <div class="reel"><div class="reel-track" id="reelTrack"></div></div>
+    <div class="channels gutter">
+      <a class="btn" href="https://www.youtube.com/channel/UC7je4oc4Y1chyBnM8KlbpJw" target="_blank" rel="noopener">유튜브</a>
+      <a class="btn" href="https://www.instagram.com/osam.jump" target="_blank" rel="noopener">인스타그램</a>
     </div>
   </section>
 
@@ -344,9 +336,28 @@ const VISIT_FORM_URL  = "https://forms.gle/XQfYojewhBszqjk99";   // 출강·특�
 const COACH_FORM_URL  = "https://forms.gle/YQb8kkdaHrc2nrxC9";   // 지도자 과정 수강 문의 구글폼 링크
 // 후기: { text: "후기 내용", who: "7세 어머님", type: "방문수업" }  — 아이 이름·기관 이름은 쓰지 않기
 const REVIEWS = [];
+// 흘러가는 영상 카드: { src: 썸네일, label: 대상, url: 영상 링크 }
+const REEL = [
+  { src:"short_GDeVhgqrLAU.jpg", label:"유치부", url:"https://youtube.com/shorts/GDeVhgqrLAU" },
+  { src:"short_y2TBqDOluE4.jpg", label:"초등부", url:"https://youtube.com/shorts/y2TBqDOluE4" },
+  { src:"short_qcyWu4n0OjE.jpg", label:"청소년", url:"https://youtube.com/shorts/qcyWu4n0OjE" },
+  { src:"short_NQhcWcKw5rU.jpg", label:"시니어", url:"https://youtube.com/shorts/NQhcWcKw5rU" },
+  { src:"short_qz2Jgc10LOE.jpg", label:"홈트",   url:"https://youtube.com/shorts/qz2Jgc10LOE" }
+];
 // ──────────────────────────────────────────────────────
 
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+
+(function renderReel(){
+  let items=REEL.slice();
+  while(items.length < 8) items = items.concat(REEL);
+  const build=function(copy){ return items.map(function(it){
+    const hide = copy ? ' aria-hidden="true" tabindex="-1"' : '';
+    return '<a class="shot" href="'+esc(it.url)+'" target="_blank" rel="noopener"'+hide+' aria-label="'+esc(it.label)+' 영상 보기">'
+      +'<img src="'+esc(it.src)+'" alt="" loading="lazy"><b>'+esc(it.label)+'</b></a>';
+  }).join(''); };
+  document.getElementById('reelTrack').innerHTML = build(false) + build(true);
+})();
 
 [['lessonBtn',LESSON_FORM_URL],['visitBtn',VISIT_FORM_URL],['coachBtn',COACH_FORM_URL]].forEach(function(f){
   const b=document.getElementById(f[0]);
