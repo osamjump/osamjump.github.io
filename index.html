@@ -151,16 +151,6 @@
   .card a::after{content:" ›"}
   .note{margin-top:18px;text-align:center;font-size:14px;color:var(--sub)}
 
-  /* reviews */
-  .reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-  @media (max-width:900px){ .reviews{grid-template-columns:repeat(2,minmax(0,1fr))} }
-  @media (max-width:560px){ .reviews{grid-template-columns:1fr} }
-  .review{background:var(--page);border-radius:22px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;margin:0;min-width:0}
-  .review blockquote{margin:0;font-size:17px;line-height:1.55}
-  .review figcaption{margin-top:auto;font-size:14px;color:var(--sub)}
-  .review figcaption b{color:var(--ink);font-weight:600;margin-right:6px}
-  .review-empty{max-width:520px;margin:0 auto;background:var(--page);border-radius:22px;padding:32px 24px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center}
-  .review-empty p{color:var(--sub);font-size:16px}
 
   /* coach + profile on black */
   .dark-band{background:var(--dark);color:var(--on-dark)}
@@ -196,7 +186,6 @@
     <div class="nav-links">
       <a href="#videos">영상</a>
       <a href="#classes">수업</a>
-      <a href="#reviews">후기</a>
       <a href="#coach">지도자 교육</a>
       <a class="pill kakao" href="https://open.kakao.com/o/sBEFyysi" target="_blank" rel="noopener">카톡 문의</a>
       <a class="pill" href="#contact">강의 문의</a>
@@ -265,16 +254,6 @@
     </div>
   </section>
 
-  <section id="reviews" class="block tint gutter">
-    <div class="inner">
-      <div class="head">
-        <div class="eyebrow">후기</div>
-        <h2 class="h2">학부모님 · 기관 후기.</h2>
-      </div>
-      <div id="reviewList"></div>
-    </div>
-  </section>
-
   <section id="coach" class="block dark-band gutter">
     <div class="inner">
       <div class="head">
@@ -340,8 +319,6 @@
 const LESSON_FORM_URL = "https://forms.gle/Sg6aSM5UjQykyvch8";   // 레슨 문의 구글폼 링크
 const VISIT_FORM_URL  = "https://forms.gle/XQfYojewhBszqjk99";   // 출강·특강 문의 구글폼 링크
 const COACH_FORM_URL  = "https://forms.gle/YQb8kkdaHrc2nrxC9";   // 지도자 과정 수강 문의 구글폼 링크
-// 후기: { text: "후기 내용", who: "7세 어머님", type: "방문수업" }  — 아이 이름·기관 이름은 쓰지 않기
-const REVIEWS = [];
 // 흘러가는 영상 카드: { src: 썸네일, label: 대상, url: 영상 링크 }
 const REEL = [
   { src:"short_GDeVhgqrLAU.jpg", label:"유치부", url:"https://youtube.com/shorts/GDeVhgqrLAU" },
@@ -370,13 +347,6 @@ function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){retu
   if(f[1]) b.href=f[1];
   else{ b.setAttribute('aria-disabled','true'); b.removeAttribute('target'); document.getElementById('formNote').hidden=false; }
 });
-
-document.getElementById('reviewList').innerHTML = REVIEWS.length
-  ? '<div class="reviews">'+REVIEWS.map(function(r){
-      return '<figure class="review"><blockquote>“'+esc(r.text)+'”</blockquote><figcaption><b>'+esc(r.type||'')+'</b>'+esc(r.who||'')+'</figcaption></figure>';
-    }).join('')+'</div>'
-  : '<div class="review-empty"><p>수업 후기를 모으고 있습니다.<br>수업을 경험하신 학부모님과 기관 담당자님의 후기를 이곳에 소개합니다.</p>'
-    +'<a class="btn ghost" href="sms:01055229613">문자로 후기 보내기</a></div>';
 
 document.querySelectorAll('[data-copy]').forEach(function(b){
   b.addEventListener('click',function(){
