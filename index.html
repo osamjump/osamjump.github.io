@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>영샘 | 서울 줄넘기·리듬트레이닝 방문수업 · 학교·기관 출강</title>
-<meta name="description" content="스포츠리듬트레이닝·음악줄넘기 전문 강사 영샘(정영성). 서울 지역 줄넘기 방문수업(개인·소그룹), 초등학교·지역아동센터·키움센터 출강, 구청·보건소 특강, 기업 출강, 리듬트레이닝 지도자 교육. 수업 문의 010-5522-9613.">
-<meta name="keywords" content="줄넘기 방문수업, 줄넘기 레슨, 음악줄넘기, 리듬트레이닝, 스포츠리듬트레이닝, 줄넘기 강사, 방과후 줄넘기, 초등 체육 출강, 지역아동센터 체육, 키움센터 체육, 유치원 체육 특강, 구청 특강, 기업 출강, 리듬트레이닝 지도자 과정, 서울 줄넘기">
+<meta name="description" content="스포츠리듬트레이닝·음악줄넘기 전문 강사 영샘(정영성). 서울 지역 줄넘기 방문수업(개인·소그룹), 신대방 초등 리듬트레이닝 오프라인 수업(일요일), 초등학교·지역아동센터·키움센터 출강, 구청·보건소 특강, 기업 출강, 리듬트레이닝 지도자 교육. 수업 문의 010-5522-9613.">
+<meta name="keywords" content="줄넘기 방문수업, 줄넘기 레슨, 음악줄넘기, 리듬트레이닝, 스포츠리듬트레이닝, 줄넘기 강사, 방과후 줄넘기, 초등 체육 출강, 지역아동센터 체육, 키움센터 체육, 유치원 체육 특강, 구청 특강, 기업 출강, 리듬트레이닝 지도자 과정, 서울 줄넘기, 신대방 리듬트레이닝, 구로 리듬트레이닝, 리듬트레이닝 오프라인 수업, 초등 리듬트레이닝 소그룹, 일요일 아이 운동">
 <meta name="author" content="영샘 정영성">
 <meta name="robots" content="index,follow">
 <meta name="naver-site-verification" content="720a7435d80ea892e7fbc944824e7d3130885aac" />
@@ -108,7 +108,7 @@
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border-radius:999px;background:var(--btn);color:var(--on-btn);font-size:16px;font-weight:600}
   .btn:hover{text-decoration:none;filter:brightness(1.08)}
   /* audience doors under the hero headline */
-  .doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;max-width:760px;margin-top:10px}
+  .doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:640px;margin-top:10px}
   @media (max-width:600px){ .doors{grid-template-columns:1fr} }
   .door{background:var(--tile);border-radius:20px;padding:18px 20px;display:flex;flex-direction:column;gap:2px;text-align:left;color:var(--ink);border:1px solid transparent;transition:border-color .2s}
   .door:hover{text-decoration:none;border-color:var(--btn)}
@@ -116,6 +116,7 @@
   .door b{font-size:20px;font-weight:800;letter-spacing:-.02em}
   .door b::after{content:" ›";color:var(--link)}
   .door em{font-style:normal;font-size:13px;color:var(--sub)}
+  .door[aria-current="true"]{border-color:var(--btn)}
   .btn.kakao{background:#FEE500;color:#191919}
   .btn.kakao.big{min-height:52px;padding:0 30px;font-size:18px;margin-top:6px}
   .nav-links .pill.kakao{background:#FEE500;color:#191919}
@@ -124,6 +125,7 @@
 
   .block{padding-block:80px}
   .block.tint{background:var(--tile)}
+
   .head{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;margin-bottom:36px}
   .head .lede{max-width:28em}
 
@@ -148,33 +150,6 @@
   @media (prefers-reduced-motion: reduce){ .reel{overflow-x:auto} .reel-track{animation:none} }
   .channels{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px}
 
-  /* programs: four compact cards */
-  .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-  @media (max-width:900px){ .cards{grid-template-columns:repeat(2,minmax(0,1fr))} }
-  @media (max-width:480px){ .cards{grid-template-columns:1fr} }
-  .card{background:var(--tile);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;gap:8px;min-width:0}
-  .card .tag{font-size:13px;font-weight:600;color:var(--sub)}
-  .card h3{font-size:21px;font-weight:700;letter-spacing:-.02em}
-  .card p{font-size:15px;color:var(--sub)}
-  .card a{margin-top:auto;padding-top:8px;font-size:15px}
-  .card a::after{content:" ›"}
-  .note{margin-top:18px;text-align:center;font-size:14px;color:var(--sub)}
-
-
-  /* coach + profile on black */
-  .dark-band{background:var(--dark);color:var(--on-dark)}
-  .dark-band .eyebrow,.dark-band .lede{color:var(--dark-sub)}
-  .dark-band .links a{color:#2997FF}
-  .edu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#38383D;border-radius:18px;overflow:hidden;max-width:820px;margin:0 auto}
-  @media (max-width:760px){ .edu{grid-template-columns:1fr} }
-  .edu div{background:var(--dark-tile);padding:22px;display:flex;flex-direction:column;gap:4px}
-  .edu b{font-size:18px}
-  .edu span{font-size:14px;color:var(--dark-sub)}
-  .creds{max-width:820px;margin:44px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;border-top:1px solid #38383D;padding-top:28px}
-  @media (max-width:560px){ .creds{grid-template-columns:1fr;gap:20px} }
-  .creds h3{font-size:14px;font-weight:700;color:var(--dark-sub);margin-bottom:8px}
-  .creds ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px;font-size:15px}
-
   /* contact */
   .contact .inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
   .phone{font-size:clamp(34px,6vw,56px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;user-select:all;color:var(--ink)}
@@ -193,12 +168,13 @@
   <div class="inner">
     <a class="brand" href="#top"><span class="logo-mark" style="width:50px" aria-hidden="true"></span><span class="sr">영샘</span></a>
     <div class="nav-links">
+      <a href="offline.html">오프라인 수업</a>
       <a href="jumprope.html">방문수업</a>
-      <a href="#classes">기관 출강</a>
+      <a href="classes.html">기관 출강</a>
       <a href="#videos">영상</a>
-      <a href="#coach">지도자 교육</a>
+      <a href="coach.html">지도자 교육</a>
       <a class="pill kakao" href="https://open.kakao.com/o/sBEFyysi" target="_blank" rel="noopener">카톡 문의</a>
-      <a class="pill" href="#contact">강의 문의</a>
+      <a class="pill" href="#contact">문의하기</a>
     </div>
   </div>
 </nav>
@@ -211,15 +187,16 @@
       <h1 class="headline">리듬으로 만드는<br>자신감.</h1>
       <p class="lede">리듬을 기준으로 목적에 맞는 효율적인 움직임을 설계합니다. 유아부터 시니어까지.</p>
       <div class="doors" aria-label="찾으시는 수업">
+        <a class="door" href="offline.html"><span>학부모님 · 초등</span><b>오프라인 수업</b><em>직접 오는 수업 · 신대방역 인근</em></a>
         <a class="door" href="jumprope.html"><span>학부모님</span><b>방문수업</b><em>유아 · 초등 줄넘기 레슨</em></a>
-        <a class="door" href="#classes"><span>학교 · 기관 담당자</span><b>출강 · 특강</b><em>정규 · 방과후 · 원데이</em></a>
-        <a class="door" href="#coach"><span>강사 · 지도자</span><b>지도자 교육</b><em>자격증 · 정기 과정</em></a>
+        <a class="door" href="classes.html"><span>학교 · 기관 담당자</span><b>출강 · 특강</b><em>정규 · 방과후 · 원데이</em></a>
+        <a class="door" href="coach.html"><span>강사 · 지도자</span><b>지도자 교육</b><em>자격증 · 정기 과정</em></a>
       </div>
       <div class="hero-photo"><img src="profile.webp" alt="스포츠리듬트레이닝 강사 영샘 정영성"></div>
     </div>
   </section>
 
-  <section id="videos" class="block tint">
+  <section id="videos" class="block">
     <div class="head gutter">
       <div class="eyebrow">수업 영상</div>
       <h2 class="h2">실제 수업 동작을 공개합니다.</h2>
@@ -228,77 +205,6 @@
     <div class="channels gutter">
       <a class="btn" href="https://www.youtube.com/channel/UC7je4oc4Y1chyBnM8KlbpJw" target="_blank" rel="noopener">유튜브</a>
       <a class="btn" href="https://www.instagram.com/osam.jump" target="_blank" rel="noopener">인스타그램</a>
-    </div>
-  </section>
-
-  <section id="classes" class="block gutter">
-    <div class="inner">
-      <div class="head">
-        <div class="eyebrow">프로그램</div>
-        <h2 class="h2">현장에 맞춘 수업.</h2>
-        <p class="lede">대상, 인원, 공간에 맞춰 구성합니다. 평일·주말 모두 협의 가능합니다.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="tag">학교 · 기관</div>
-          <h3>정규 · 방과후 출강</h3>
-          <p>초등학교, 서울 지역아동센터 · 키움센터, 유치원 · 어린이집</p>
-          <a href="#contact">출강 문의</a>
-        </article>
-        <article class="card">
-          <div class="tag">개인 · 소그룹</div>
-          <h3>가정 방문수업</h3>
-          <p>서울 지역 가정 · 아파트 커뮤니티 시설. 리듬트레이닝 · 음악줄넘기</p>
-          <a href="jumprope.html">방문수업 안내</a>
-        </article>
-        <article class="card">
-          <div class="tag">구청 · 보건소</div>
-          <h3>공공기관 특강</h3>
-          <p>주민 대상 원데이클래스와 특화 프로그램</p>
-          <a href="#contact">특강 문의</a>
-        </article>
-        <article class="card">
-          <div class="tag">기업</div>
-          <h3>기업 출강</h3>
-          <p>임직원 건강 프로그램 · 워크숍. 운동복 없이 실내에서 진행</p>
-          <a href="#contact">기업 출강 문의</a>
-        </article>
-      </div>
-      <p class="note">일정이나 지역이 맞지 않을 경우, 같은 커리큘럼으로 교육받은 강사님을 연결해 드립니다.</p>
-    </div>
-  </section>
-
-  <section id="coach" class="block dark-band gutter">
-    <div class="inner">
-      <div class="head">
-        <div class="eyebrow">지도자 교육</div>
-        <h2 class="h2">현장 중심의 지도자 교육.</h2>
-        <p class="lede">실제 수업 구성과 진행 방식을 그대로 교육합니다.</p>
-      </div>
-      <div class="edu">
-        <div><b>원데이클래스</b><span>기본 동작과 수업 구성 실습</span></div>
-        <div><b>자격증 교육</b><span>스포츠리듬트레이닝 지도자 자격 과정</span></div>
-        <div><b>정기 지도자 과정</b><span>수업 설계부터 현장 진행까지</span></div>
-      </div>
-      <div class="creds" id="profile">
-        <div>
-          <h3>자격</h3>
-          <ul>
-            <li>스포츠리듬트레이닝 디퓨저</li>
-            <li>스포츠리듬트레이닝 인스트럭터 레벨1</li>
-            <li>세계줄넘기총연맹 연수원장</li>
-          </ul>
-        </div>
-        <div>
-          <h3>주요 경력</h3>
-          <ul>
-            <li>초등학교 리듬트레이닝 출강</li>
-            <li>서울 지역아동센터 · 키움센터 체육수업</li>
-            <li>구로구청 느린 학습자 특강 · 중구보건소 원데이클래스</li>
-            <li>목동에덴어린이집 놀이체육 · 롯데백화점 문화센터</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -312,10 +218,11 @@
       <div class="phone">010-5522-9613</div>
       <button class="copy" type="button" data-copy="010-5522-9613">번호 복사</button>
       <div class="forms">
-        <a class="btn" id="lessonBtn" href="#contact" target="_blank" rel="noopener">레슨 문의서</a>
-        <a class="btn" id="visitBtn" href="#contact" target="_blank" rel="noopener">출강 · 특강 문의서</a>
-        <a class="btn" id="coachBtn" href="#contact" target="_blank" rel="noopener">지도자 과정 문의서</a>
+        <a class="btn" id="visitBtn" href="#contact" target="_blank" rel="noopener">출강 · 특강 문의서 작성</a>
+        <a class="btn" id="coachBtn" href="#contact" target="_blank" rel="noopener">지도자 과정 문의서 작성</a>
       </div>
+      <p class="form-note">학부모님은 각 수업 페이지에서 바로 문의하실 수 있습니다.</p>
+      <div class="links"><a href="offline.html">오프라인 수업</a><a href="jumprope.html">방문수업</a></div>
       <p class="form-note" id="formNote" hidden>문의서는 준비 중입니다. 지금은 위 번호로 문자 주세요.</p>
     </div>
   </section>
@@ -323,14 +230,13 @@
 
 <footer class="gutter">
   <div class="inner">
-    <span>영샘 · 스포츠리듬트레이닝 · 음악줄넘기 · <a href="jumprope.html">서울 줄넘기 방문수업</a> · 초등학교·지역아동센터 체육 출강</span>
+    <span>영샘 · 스포츠리듬트레이닝 · 음악줄넘기 · <a href="offline.html">신대방 오프라인 수업</a> · <a href="jumprope.html">서울 줄넘기 방문수업</a> · <a href="classes.html">학교 · 기관 출강</a> · <a href="coach.html">지도자 교육</a></span>
     <span><a href="https://www.youtube.com/channel/UC7je4oc4Y1chyBnM8KlbpJw" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/osam.jump" target="_blank" rel="noopener">Instagram</a> · 010-5522-9613</span>
   </div>
 </footer>
 
 <script>
 // ── 여기만 채우면 페이지가 바뀌어요 ──────────────────────
-const LESSON_FORM_URL = "https://forms.gle/Sg6aSM5UjQykyvch8";   // 레슨 문의 구글폼 링크
 const VISIT_FORM_URL  = "https://forms.gle/XQfYojewhBszqjk99";   // 출강·특강 문의 구글폼 링크
 const COACH_FORM_URL  = "https://forms.gle/YQb8kkdaHrc2nrxC9";   // 지도자 과정 수강 문의 구글폼 링크
 // 흘러가는 영상 카드: { src: 썸네일, label: 대상, url: 영상 링크 }
@@ -356,11 +262,14 @@ function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){retu
   document.getElementById('reelTrack').innerHTML = build(false) + build(true);
 })();
 
-[['lessonBtn',LESSON_FORM_URL],['visitBtn',VISIT_FORM_URL],['coachBtn',COACH_FORM_URL]].forEach(function(f){
+[['visitBtn',VISIT_FORM_URL],['coachBtn',COACH_FORM_URL]].forEach(function(f){
   const b=document.getElementById(f[0]);
   if(f[1]) b.href=f[1];
   else{ b.setAttribute('aria-disabled','true'); b.removeAttribute('target'); document.getElementById('formNote').hidden=false; }
 });
+
+// 예전 주소(#classes, #coach)로 들어오면 새 페이지로 보냄
+(function(){ const go={classes:'classes.html', coach:'coach.html'}[location.hash.slice(1)]; if(go) location.replace(go); })();
 
 document.querySelectorAll('[data-copy]').forEach(function(b){
   b.addEventListener('click',function(){
